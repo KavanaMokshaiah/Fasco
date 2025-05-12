@@ -1,0 +1,16 @@
+/* src/styles/molecules/SocialLoginButtons.module.scss */
+@use '../abstracts/colors' as *;
+.socialButtons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .customButton{
+    border: 1px solid $primary-color !important;
+    color: $text-color !important;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+  }

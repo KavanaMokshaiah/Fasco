@@ -1,0 +1,11 @@
+/* src/styles/atoms/ButtonAtom.module.scss */
+@import '../abstracts/variables';
+
+.button {
+  margin-top: 1rem;
+  background-color: $primary-color;
+  color: $text-light;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}

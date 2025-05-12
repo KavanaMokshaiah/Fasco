@@ -1,0 +1,26 @@
+// /* src/styles/atoms/InputAtom.module.scss */
+.inputUnderline {
+  margin-bottom: 1.5rem;
+
+  .MuiInput-underline:before {
+    border-bottom: 2px solid #5b86e5;
+  }
+
+  .MuiInput-underline:hover:before {
+    border-bottom: 2px solid #356fe0;
+  }
+
+  .MuiInput-underline:after {
+    border-bottom: 2px solid #5b86e5;
+  }
+
+  input {
+    font-size: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  label {
+    color: #5b86e5;
+    font-weight: 500;
+  }
+}

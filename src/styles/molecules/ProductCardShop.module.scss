@@ -1,0 +1,58 @@
+.card {
+    width: Fixed(302px);
+    height: Hug(531.61px);
+    gap: 20px;
+    border: 1px solid #eaeaea;
+    border-radius: 0px;
+    overflow: hidden;
+    padding: 1rem;
+    text-align: left;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s;
+    
+  
+    &:hover {
+      transform: translateY(-5px);
+    }
+  
+    h6 {
+      font-size: 1rem;
+      margin: 0.5rem 0 0.2rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #333;
+      
+    }
+  }
+  
+  .productImage {
+    width: 302px;
+    height: 402.61px;
+    object-fit: contain;
+    margin-left: 10px;
+  }
+  
+
+  .colorSwatches {
+    display: flex;
+    gap: 6px;
+    margin-top: 0.5rem;
+  }
+  
+  .swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+  
+    &:hover {
+      border-color: #000;
+    }
+  }
+  

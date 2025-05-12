@@ -1,0 +1,32 @@
+.filterPanel {
+    width: 200px;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+  
+    h5 {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+  
+    ul {
+      list-style: none;
+      padding-left: 0;
+  
+      li {
+        cursor: pointer;
+        padding: 0.3rem 0;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: #000;
+          font-weight: 500;
+        }
+      }
+  
+      .active {
+        font-weight: 700;
+        color: #000;
+      }
+    }
+  }
+  

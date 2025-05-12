@@ -1,0 +1,104 @@
+/* src/styles/pages/LoginPage.module.scss */
+
+.loginWrapper {
+  min-height: 10vh;
+  width: 98%;
+  overflow: hidden !important;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem;
+  margin-top: 21px;
+}
+
+.loginContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dbdbdb;
+  border-radius: 10px;
+}
+
+.loginImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    object-fit: contain;
+  }
+}
+
+.loginFormContainer {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  overflow: hidden !important;
+  text-align: center;
+}
+
+.textHeading {
+  font-family: "Volkhov", serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+}
+
+.textSubheading {
+  font-family: "Volkhov", serif;
+  font-weight: 400;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.divider {
+  text-align: center;
+  margin: 1rem 0;
+  font-weight: 700;
+  color: #838383;
+  font-size: 30px;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+@media (max-width: 992px) {
+  .loginContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .loginImage img {
+    max-width: 80%;
+
+    margin-bottom: 1rem;
+  }
+
+  .textHeading {
+    font-size: 2.8rem;
+  }
+
+  .textSubheading {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .textHeading {
+    font-size: 2.2rem;
+  }
+
+  .textSubheading {
+    font-size: 1.2rem;
+  }
+
+  .loginFormContainer {
+    padding: 1rem;
+  }
+}

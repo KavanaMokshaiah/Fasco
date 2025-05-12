@@ -1,0 +1,57 @@
+/* src/styles/organisms/LoginForm.module.scss */
+.loginForm {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .formLinks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    margin-left: 330px;
+    a {
+        text-decoration: none;
+        color: #5B86E5;
+        font-weight: 500;
+    
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    
+  }
+  .blackButton {
+    background-color: black !important;
+    color: white !important;
+    text-transform: none;
+    font-weight: 600;
+
+    &:hover {
+      background-color: #222 !important;
+    }
+  }
+  
+  .registerButton {
+    background-color: white !important;
+    color: #5B86E5 !important;
+    border: 1px solid #5B86E5 !important;
+    text-transform: none;
+    font-weight: 600;
+  
+    &:hover {
+      background-color: #f2f6ff !important;
+    }
+  }
+.info{
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: -300px;
+    margin-top: 30px;
+}

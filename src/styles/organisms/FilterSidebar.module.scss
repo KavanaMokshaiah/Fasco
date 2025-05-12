@@ -1,0 +1,70 @@
+// // src/styles/organisms/FilterSidebar.module.scss
+
+.sidebar {
+  padding: 1rem;
+  border-right: 1px solid #eee;
+  width: 250px;
+  p {
+    font-family: "Volkhov";
+    font-weight: 400;
+    font-size: 30px;
+    color: #000000;
+    line-height: 36px;
+  }
+}
+
+.filterSection {
+  margin-bottom: 1.5rem;
+
+  h5 {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+
+    li {
+      cursor: pointer;
+      padding: 0.5rem 0;
+      transition: background-color 0.2s;
+      color: #8a8a8a;
+      font-weight: 400;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+
+      &.active {
+        font-weight: bold;
+        color: #007bff;
+      }
+    }
+  }
+}
+
+.colorSwatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.swatch {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: #000;
+  }
+
+  &.active {
+    border-color: #007bff;
+  }
+}

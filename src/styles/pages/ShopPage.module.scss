@@ -1,0 +1,46 @@
+.shopContainer {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: #222;
+}
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 👈 3 cards per row
+  gap: 2rem;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.productWrapper {
+  position: relative;
+}
+
+.bestSellerLabel {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  background-color: none;
+  color: black;
+  padding: 6px 12px;
+  font-family: "Volkhov", serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  z-index: 1;
+}

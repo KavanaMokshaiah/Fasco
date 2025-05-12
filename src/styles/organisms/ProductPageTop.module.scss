@@ -1,0 +1,382 @@
+.productPage {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+  margin-left: 60px;
+
+  .imageSection {
+    display: flex;
+    gap: 20px;
+
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      img {
+        width: 60px;
+        height: 80px;
+        object-fit: cover;
+        cursor: pointer;
+        border: 2px solid transparent;
+
+        &:hover {
+          border-color: black;
+        }
+      }
+    }
+
+    .mainImage {
+      img {
+        width: 400px;
+        height: 600px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .infoSection {
+    max-width: 1000px;
+    margin-left: 60px;
+
+    .brand {
+      font-family: "Volkhov";
+      font-weight: 400;
+      font-size: 14px;
+      color: #666666;
+      margin-top: 0;
+    }
+
+    .title {
+      font-family: "Volkhov", serif;
+      font-weight: 400;
+      color: #000000;
+      font-size: 30px;
+      margin-top: 0;
+    }
+
+    .rating {
+      margin-bottom: 10px;
+
+      height: 15px;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      .current {
+        font-weight: 400;
+        font-size: 24px;
+        font-family: "Volkhov", serif;
+        color: #000000;
+      }
+
+      .old {
+        text-decoration: line-through;
+        font-family: "jost", serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #666666;
+      }
+
+      .discount {
+        background: #e74c3c;
+        color: white;
+        font-size: 12px;
+        padding: 2.5px 9.69px 2.5px 10px;
+        border-radius: 11px;
+      }
+    }
+
+    .views {
+      font-family: "Poppins", serif;
+      font-size: 16px;
+      font-weight: 400;
+      margin: 10px 0;
+      color: #8a8a8a;
+    }
+
+    .timerBox {
+      background: #ffecec;
+      padding-top: 15px;
+      padding-left: 10px;
+      border: 1px solid #f8cccc;
+      color: #ff706b;
+      width: 585px;
+      height: 54px;
+      border-radius: 4px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      gap: 10px;
+      vertical-align: middle;
+      line-height: 28px;
+      font-family: "Volkhov", serif;
+      letter-spacing: 0%;
+      font-size: 18px;
+
+      .timer {
+        font-family: "jost", serif;
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 32px;
+        letter-spacing: 0%;
+        color: #ff706b;
+        margin-left: 155px;
+      }
+    }
+
+    .stockNotice {
+      p {
+        font-family: "jost", serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #666666; // optional red color for urgency
+        margin-bottom: 8px;
+        line-height: 24px;
+      }
+
+      .stockLine {
+        height: 5px;
+        width: 600px;
+        border-radius: 2px;
+        background: linear-gradient(to right, #ef2d2d 1%, #dedede 30%);
+      }
+    }
+
+    .selector {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .size {
+        font-family: "Volkhov", serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        color: #000000;
+
+        button {
+          font-family: "Poppins", serif;
+          font-size: 18px;
+          font-weight: 400;
+          padding: 8px 16px;
+          border: 1px solid #ccc;
+          background: white;
+          cursor: pointer;
+          transition: 0.3s;
+
+          &:hover {
+            background: #f0f0f0;
+          }
+        }
+
+        .activeSize {
+          background: black;
+          color: white;
+          border-color: black;
+        }
+      }
+
+      .color {
+        display: flex;
+        font-family: "Volkhov", serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        color: #000000;
+
+        span {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          display: inline-block;
+          border: 2px solid transparent;
+
+          &.activeColor {
+            border-color: black;
+            outline: 2px solid #000;
+            border: 1px solid black;
+          }
+        }
+      }
+
+      .qtyAndCart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+
+        .qtyGroup {
+          flex: 1;
+          min-width: 120px;
+
+          label {
+            font-family: "Volkhov", serif;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+          }
+
+          .qtyCombo {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            overflow: hidden;
+
+            button {
+              background: #f0f0f0;
+              border: none;
+              width: 60px;
+              height: 35px;
+              cursor: pointer;
+              font-size: 18px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              &:hover {
+                background: #e0e0e0;
+              }
+            }
+
+            span {
+              padding: 0 15px;
+              min-width: 30px;
+              text-align: center;
+              font-weight: 500;
+            }
+          }
+        }
+
+        .addToCart {
+          flex: none;
+          background: white;
+          color: #000000;
+          font-family: "Volkhov", serif;
+          font-size: 16px;
+          font-weight: 400;
+          padding: 10px 20px;
+          margin-left: 0px;
+          height: 20px;
+          border: 1px solid black;
+          cursor: pointer;
+          border-radius: 5px;
+          white-space: nowrap;
+          min-width: 360px;
+          text-decoration: none;
+          text-align: center;
+          margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+          flex-direction: column;
+          align-items: stretch;
+
+          .addToCart {
+            width: 100%;
+          }
+        }
+      }
+
+      .actions {
+        display: flex;
+        justify-content: space-between;
+        font-family: "jost", serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #000000;
+
+        span {
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: 400;
+          color: #000000;
+        }
+      }
+    }
+
+    .deliveryInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .deliveryRow {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      color: #000000;
+
+      svg {
+        flex-shrink: 0;
+        width: 20px;
+        height: 15px;
+        border: 0.03px;
+      }
+
+      .label {
+        font-weight: 700;
+        font-family: "Volkhov", serif;
+        font-size: 16px;
+        line-height: 24px;
+        white-space: nowrap;
+        color: #000000;
+      }
+
+      .value {
+        white-space: nowrap;
+        color: #000000;
+        font-family: "jost", serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+      }
+    }
+
+    .paymentlayout {
+      width: 585px;
+      height: 108.92px;
+      background-color: #f8f8f8;
+
+      .payment {
+        margin-top: 20px;
+
+        img {
+          width: Fixed(320px);
+          height: Hug(25.92px);
+          margin-left: 125px;
+          padding-top: 20px;
+        }
+
+        p {
+          font-size: 16px;
+          font-weight: 400;
+          font-family: "Volkhov", serif;
+          line-height: 100%;
+          vertical-align: middle;
+          margin-top: 20px;
+          margin-left: 153px;
+          color: #000000;
+        }
+      }
+    }
+  }
+  .activeThumb {
+    border: 2px solid #000;
+    opacity: 1;
+  }
+}

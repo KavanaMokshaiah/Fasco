@@ -1,0 +1,18 @@
+/* src/styles/global.scss */
+@import "./abstracts/variables";
+@import "./abstracts/colors";
+@import "./abstracts/fonts";
+@import "@fontsource/poppins/400.css";
+@import "@fontsource/poppins/700.css"; // bold
+@import "@fontsource/volkhov/400.css";
+@import "@fontsource/volkhov/700.css";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-color;
+}

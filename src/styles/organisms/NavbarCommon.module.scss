@@ -1,0 +1,74 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: #fff;
+  font-family: "Segoe UI", sans-serif;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #444;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+
+  a {
+    text-decoration: none;
+    color: #444;
+    position: relative;
+    font-size: 1rem;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  .active {
+    color: #000;
+    font-weight: 500;
+    border-bottom: 2px solid #444; // or underline style
+  }
+}
+
+.dropdown {
+  position: relative;
+
+  a {
+    cursor: pointer;
+  }
+
+}
+
+.icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1rem;
+  color: #444;
+
+  svg {
+    cursor: pointer;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none; // Hide for now on small screens
+  }
+
+  .icons {
+    gap: 1rem;
+  }
+}

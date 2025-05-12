@@ -1,0 +1,134 @@
+.newArrivals {
+  text-align: center;
+  padding: 4rem 2rem;
+
+  h2 {
+    font-size: 46px;
+    font-weight: 400;
+    font-family: "Volkhov", serif;
+    line-height: 100%;
+    align-items: center;
+    letter-spacing: 0%;
+  }
+
+  p {
+    color: #777;
+    margin: 0.5rem 0 2rem;
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 16px;
+    align-items: center;
+    letter-spacing: 0%;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    .tab {
+      background: #f5f5f5;
+      color: #8a8a8a;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      align-items: center;
+      letter-spacing: 0%;
+      font-family: "Poppins", serif;
+
+      &.active {
+        background: #000;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+    }
+  }
+
+  .cardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 👈 exactly 3 per row
+    gap: 0rem;
+    justify-items: center;
+
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr); // 2 on tablets
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: 1fr; // 1 on small screens
+    }
+  }
+
+  .card {
+    background: white;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    max-width: 270px;
+
+    img {
+      width: 336px;
+      height: 244px;
+      top: 2537px;
+      left: 345px;
+      border-radius: 10px;
+    }
+
+    h4 {
+      margin: 0.5rem 0 0.25rem;
+    }
+
+    p {
+      margin: 0;
+      color: #555;
+    }
+
+    .details {
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+
+      .rating {
+        color: #f59e0b; // amber star color
+      }
+
+      .reviews {
+        color: #999;
+      }
+    }
+
+    .priceStock {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+
+      span {
+        font-weight: 600;
+      }
+
+      .stock {
+        font-size: 0.75rem;
+        color: red;
+      }
+    }
+  }
+
+  .viewMore {
+    margin-top: 3rem;
+    padding: 0.75rem 2rem;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,146 @@
+.cartPageWrapper {
+  background-color: #fff;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.breadcrumb {
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 40px;
+}
+
+.table {
+  width: 100%;
+  border-top: 1px solid #ddd;
+}
+
+.tableHeader,
+.tableRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.tableHeader {
+  font-weight: bold;
+}
+
+.tableRow {
+  border-top: 1px solid #eee;
+}
+
+.productInfo {
+  display: flex;
+  gap: 16px;
+
+  img {
+    width: 168px;
+    height: 225px;
+    border-radius: 0px;
+  }
+
+  .name {
+    font-weight: 400;
+    font-family: "Volhkov", serif;
+    font-size: 22px;
+    line-height: 100%;
+    color: #000000;
+  }
+  .color {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 42px;
+    color: #8a8a8a;
+  }
+
+  .remove {
+    background: none;
+    border: none;
+    color: #8a8a8a;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: "Poppins", serif;
+    line-height: 42px;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 8px;
+  }
+}
+.divider {
+  color: #888888;
+}
+.quantityControls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  button {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    background-color: #eee;
+  }
+}
+
+.summarySection {
+  max-width: 400px;
+  margin-left: auto;
+  margin-top: 40px;
+
+  .giftWrap {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .subtotalRow {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    .checkout,
+    .viewCart {
+      padding: 12px;
+      // font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .checkout {
+      font-family: "Poppins", serif;
+      font-weight: 400;
+      font-size: 16px;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .viewCart {
+      font-family: "Volkhov", serif;
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 32px;
+      background-color: #fff;
+      color: #000000;
+      text-decoration: underline;
+    }
+  }
+}
