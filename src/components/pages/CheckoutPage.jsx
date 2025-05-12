@@ -1,11 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../../styles/pages/CheckoutPage.module.scss";
 import sampleProduct from "../../assets/images/product-main.png";
 import NavbarCommon from "../../components/organisms/NavbarCommon";
 import Footer from "../../components/organisms/Footer";
 import NewsletterSection from "../../components/organisms/NewsletterSection";
-import CardIcon from "../../assets/icons/card.svg";
+
 const CheckoutPage = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    country: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    city: "",
+    postalCode: "",
+    cardNumber: "",
+    expiry: "",
+    cvv: "",
+    cardHolder: "",
+  });
+  const [showModal, setShowModal] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    Object.entries(formData).forEach(([key, value]) => {
+      if (!value.trim()) newErrors[key] = "This field is required";
+    });
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handlePayNow = () => {
+    if (validateForm()) {
+      setShowModal(true);
+    }
+  };
+
   return (
     <>
       <NavbarCommon />
@@ -20,12 +58,25 @@ const CheckoutPage = () => {
               <p>
                 Have an account? <a href="#">Create Account</a>
               </p>
-              <input type="email" placeholder="Email Address" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              {errors.email && (
+                <span className={styles.error}>{errors.email}</span>
+              )}
             </section>
 
             <section className={styles.deliverySection}>
               <h2>Delivery</h2>
-              <select required defaultValue="">
+              <select
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+              >
                 <option value="" disabled>
                   Select Country
                 </option>
@@ -33,19 +84,72 @@ const CheckoutPage = () => {
                 <option value="US">United States</option>
                 <option value="UK">United Kingdom</option>
               </select>
+              {errors.country && (
+                <span className={styles.error}>{errors.country}</span>
+              )}
 
               <div className={styles.nameGroup}>
-                <input type="text" placeholder="First Name" />
-                <input type="text" placeholder="Last Name" />
+                <input
+                  type="text"
+                  name="firstName"
+                  placeholder="First Name"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  placeholder="Last Name"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                />
               </div>
-              <input type="text" placeholder="Address" />
+              {errors.firstName && (
+                <span className={styles.error}>{errors.firstName}</span>
+              )}
+              {errors.lastName && (
+                <span className={styles.error}>{errors.lastName}</span>
+              )}
+
+              <input
+                type="text"
+                name="address"
+                placeholder="Address"
+                value={formData.address}
+                onChange={handleChange}
+              />
+              {errors.address && (
+                <span className={styles.error}>{errors.address}</span>
+              )}
+
               <div className={styles.cityZipGroup}>
-                <input type="text" placeholder="City" />
-                <input type="text" placeholder="Postal Code" />
+                <input
+                  type="text"
+                  name="city"
+                  placeholder="City"
+                  value={formData.city}
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="postalCode"
+                  placeholder="Postal Code"
+                  value={formData.postalCode}
+                  onChange={handleChange}
+                />
               </div>
-              <label className={styles.checkboxLabelend}>
+              {errors.city && (
+                <span className={styles.error}>{errors.city}</span>
+              )}
+              {errors.postalCode && (
+                <span className={styles.error}>{errors.postalCode}</span>
+              )}
+
+              <label className={styles.checkboxCustom}>
                 <input type="checkbox" />
-                <span>Save This Info For Future</span>
+                <span className={styles.checkboxText}>
+                  Save This Info For Future
+                </span>
               </label>
             </section>
 
@@ -55,28 +159,68 @@ const CheckoutPage = () => {
               <select required defaultValue="">
                 <option value="" disabled>
                   Credit Card
-                  <img
-                    src={CardIcon}
-                    alt="Card Icon"
-                    className={styles.cardIcon}
-                  />
                 </option>
                 <option>Debit Card</option>
                 <option>ATM</option>
               </select>
 
               <div className={styles.cardNumberGroup}>
-                <input type="text" placeholder="Card Number" />
-                <input type="text" placeholder="Expiration Date" />
-                <input type="text" placeholder="Security Code" />
+                <input
+                  type="text"
+                  name="cardNumber"
+                  placeholder="Card Number"
+                  value={formData.cardNumber}
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="expiry"
+                  placeholder="Expiration Date"
+                  value={formData.expiry}
+                  onChange={handleChange}
+                />
+                <input
+                  type="text"
+                  name="cvv"
+                  placeholder="Security Code"
+                  value={formData.cvv}
+                  onChange={handleChange}
+                />
               </div>
-              <input type="text" placeholder="Card Holder Name" />
-              <label className={styles.checkboxLabelend}>
+              {errors.cardNumber && (
+                <span className={styles.error}>{errors.cardNumber}</span>
+              )}
+              {errors.expiry && (
+                <span className={styles.error}>{errors.expiry}</span>
+              )}
+              {errors.cvv && <span className={styles.error}>{errors.cvv}</span>}
+
+              <input
+                type="text"
+                name="cardHolder"
+                placeholder="Card Holder Name"
+                value={formData.cardHolder}
+                onChange={handleChange}
+              />
+              {errors.cardHolder && (
+                <span className={styles.error}>{errors.cardHolder}</span>
+              )}
+
+              <label className={styles.checkboxCustom}>
                 <input type="checkbox" />
-                <span>Save This Info For Future</span>
+                <span className={styles.checkboxText}>
+                  Save This Info For Future
+                </span>
               </label>
 
-              <button className={styles.payNowBtn}>Pay Now</button>
+              <button
+                type="button"
+                onClick={handlePayNow}
+                className={styles.payNowBtn}
+              >
+                Pay Now
+              </button>
+
               <p className={styles.copyright}>
                 Copyright © 2023 FASCO. All Rights Reserved.
               </p>
@@ -119,9 +263,21 @@ const CheckoutPage = () => {
             </div>
           </div>
         </div>
+
         <NewsletterSection />
         <Footer />
       </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className={styles.modalOverlay}>
+          <div className={styles.modalContent}>
+            <h2>Payment Successful</h2>
+            <p>Your order is placed.</p>
+            <button onClick={() => setShowModal(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </>
   );
 };
